@@ -69,6 +69,7 @@ header #subheader nav ul li a:hover{
 	text-decoration: none;
 	color:#fff;
 	background: #1798af;
+	border-radius: 5px;
 }
 /*---MAIN---*/
 #main{
@@ -128,6 +129,40 @@ header #subheader nav ul li a:hover{
 	background: linear-gradient(to bottom,  rgba(38,144,59,1) 0%,rgba(18,117,38,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26903b', endColorstr='#127526',GradientType=0 ); /* IE6-9 */	
 }
+#bienvenidos{
+  -webkit-transform:translateX(0);
+  -moz-transform:translateX(0);
+  -webkit-transition-duration:0.5s;
+  -moz-transition-duration:0.5s;
+}
+#bienvenidos:before{
+  content:'';
+  position:absolute;
+  width:90%;
+  height:20%;
+  left:5%;
+  top:100%;
+  background:-moz-radial-gradient(
+             center, ellipse,
+             rgba(0,0,0,0.35) 0%,
+             rgba(0,0,0,0) 80%);
+  background:-webkit-radial-gradient(
+             center, ellipse,
+             rgba(0,0,0,0.45) 0%,
+             rgba(0,0,0,0) 80%);
+  opacity:0;
+  -webkit-transition-duration:0.5s;
+  -moz-transition-duration:0.5s;
+}
+#bienvenidos:hover{
+  -moz-transform:translateY(-5px);
+  -webkit-transform:translateY(-5px);
+}
+#bienvenidos:hover:before{
+  -moz-transform:translateY(5px);
+  -webkit-transform:translateY(5px);
+  opacity:1;
+}
 #bienvenidos article h3{
 	font-family: 'Quattrocento Sans', sans-serif;
 	font-weight:normal;
@@ -142,10 +177,13 @@ header #subheader nav ul li a:hover{
 
 /*---CONTENIDO---*/
 #contenido{
-	width:700px;
+	border:solid 1px red;
+	margin-top: 30px;
+	width:670px;
 	float: left;
 }
 #contenido article{
+	border:solid 1px red;
 	float: left;
 	margin-bottom: 20px;
 }
@@ -177,6 +215,7 @@ aside{
 	width: 220px;
 	float:left;
 	margin-left: 20px;
+	margin-top: 30px;
 	background: #4d78b3;
 	padding: 10px 10px 0px 10px;
 	border-radius: 5px;
@@ -237,11 +276,30 @@ footer #acerca-de h3{
 	margin-bottom: 5px; 
 }
 footer #redes-s div{
-	width: 200px;
-	height:50px;
+	width: 197px;
+	height:47px;
 	float:left;
-	background: orange;
 	opacity: 0.7;
+	position:relative;
+}
+footer #redes-s div:before{
+  content:'';
+  position:absolute;
+  border: 3px solid #1798af;
+  top:-20px;
+  bottom:-20px;
+  left:-20px;
+  right:-20px;
+  -webkit-transition-duration:0.3s;
+  -moz-transition-duration:0.3s;
+  opacity:0;
+}
+footer #redes-s div:hover:before{
+  top:-8px;
+  bottom:-8px;
+  left:-8px;
+  right:-8px;
+  opacity:1;
 }
 footer #redes-s div a{
 	width:200px;
@@ -251,14 +309,15 @@ footer #redes-s div a{
 footer #redes-s .email{
 	background: url(../imagenes/correo.png);
 	margin-bottom: 15px;
+	margin-right: 20px;
 }
-footer #redes-s .facebook{background: url(../imagenes/facebook.png);}
+footer #redes-s .facebook{background: url(../imagenes/facebook.png);margin-right: 20px;}
 footer #redes-s .twitter{
 	background: url(../imagenes/twitter.png);
 	margin-bottom: 15px;
 }
 footer #redes-s .github{background: url(../imagenes/github.png);}
-footer #redes-s div:hover{opacity: 1;}
+/*footer #redes-s div:hover{opacity: 1;}*/
 #copy{
 	float:left;
 	width: 960px; 
